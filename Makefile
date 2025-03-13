@@ -1,38 +1,34 @@
-SRC =     ft_putchar_fd.c  ft_strmapi.c\
-ft_atoi.c ft_putendl_fd.c  ft_strncmp.c\
-ft_bzero.c ft_putnbr_fd.c  ft_strncpy.c\
-ft_calloc.c ft_putstr_fd.c ft_strnstr.c\
-ft_isalnum.c ft_split.c    ft_strrchr.c\
-ft_isalpha.c ft_strchr.c   ft_strtrim.c\
-ft_isascii.c ft_strdup.c   ft_substr.c\
-ft_isdigit.c ft_memchr.c   ft_striteri.c\
-ft_tolower.c ft_isprint.c  ft_memcmp.c\
-ft_strjoin.c ft_toupper.c  ft_itoa.c\
-ft_memcpy.c  ft_strlcat.c  ft_memmove.c\
-ft_strlcpy.c ft_memset.c   ft_strlen.c\
-
-SRC_BONUS = ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c\
-ft_lstlast_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c\
-ft_lstadd_front_bonus.c ft_lstadd_back_bonus.c\
+SRC = src/ft_is/ft_isalnum.c src/ft_is/ft_isalpha.c src/ft_is/ft_isascii.c src/ft_is/ft_isdigit.c src/ft_is/ft_isprint.c \
+	src/ft_mem/ft_bzero.c src/ft_mem/ft_calloc.c src/ft_mem/ft_memchr.c src/ft_mem/ft_memmove.c src/ft_mem/ft_memcmp.c \
+	src/ft_mem/ft_memset.c src/ft_mem/ft_memcpy.c \
+	src/ft_put/ft_putchar_fd.c  src/ft_put/ft_putendl_fd.c src/ft_put/ft_putnbr_fd.c src/ft_put/ft_putstr_fd.c\
+	src/ft_to/ft_tolower.c src/ft_to/ft_toupper.c  src/ft_to/ft_itoa.c src/ft_to/ft_atoi.c\
+	src/ft_str/ft_strmapi.c src/ft_str/ft_strncmp.c src/ft_str/ft_strncpy.c src/ft_str/ft_strnstr.c \
+	src/ft_str/ft_split.c src/ft_str/ft_strrchr.c src/ft_str/ft_strchr.c   src/ft_str/ft_strtrim.c \
+	src/ft_str/ft_strdup.c   src/ft_str/ft_substr.c src/ft_str/ft_striteri.c src/ft_str/ft_strjoin.c \
+	src/ft_str/ft_strlcat.c src/ft_str/ft_strlcpy.c src/ft_str/ft_strlen.c\
+	src/ft_lst/ft_lstclear_bonus.c src/ft_lst/ft_lstdelone_bonus.c src/ft_lst/ft_lstiter_bonus.c\
+	src/ft_lst/ft_lstlast_bonus.c src/ft_lst/ft_lstmap_bonus.c src/ft_lst/ft_lstnew_bonus.c \
+	src/ft_lst/ft_lstsize_bonus.c src/ft_lst/ft_lstadd_front_bonus.c src/ft_lst/ft_lstadd_back_bonus.c\
+	src/gnl/get_next_line.c src/gnl/get_next_line_utils.c \
+	src/ft_printf/ft_printf.c src/ft_printf/ft_print_bx.c  src/ft_printf/ft_print_d.c src/ft_printf/ft_print_p.c \
+	src/ft_printf/ft_print_u.c  src/ft_printf/ft_putnbr_base.c src/ft_printf/ft_strlen.c src/ft_printf/ft_print_c.c \
+	src/ft_printf/ft_print_s.c  src/ft_printf/ft_print_x.c src/ft_printf/ft_size.c
 
 NAME = libft.a
 OBJ = ${SRC:.c=.o}
-OBJ_BONUS = $(SRC_BONUS:.c=.o)
 FLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
+	@ar -rcs $(NAME) $(OBJ)
 
 %.o: %.c
-	cc $(FLAGS) -c $< -o $@
-
-bonus : $(OBJ) $(OBJ_BONUS)
-	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+	@cc $(FLAGS) -c $< -o $@
 
 clean :
-	rm -rf $(OBJ) $(OBJ_BONUS)
+	@rm -rf $(OBJ)
 
 fclean : clean
 	rm -f $(NAME)
