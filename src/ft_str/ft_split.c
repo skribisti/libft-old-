@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 09:29:14 by norabino          #+#    #+#             */
-/*   Updated: 2025/01/09 10:46:03 by norabino         ###   ########.fr       */
+/*   Updated: 2025/05/16 18:13:17 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,17 +102,3 @@ tab[0] = start
 tab[1] = end
 tab[2] = i
 */
-/*
-#include <stdio.h>
-int		main()
-{
- 	char **arr;
-    
- 	arr = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
-    int i = 0;
-    while(arr[i])
-    {
-        printf("%s\n", arr[i]);
-        i++;
-    }
-}*/
